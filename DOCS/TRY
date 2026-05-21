@@ -1,0 +1,162 @@
+🔥 TRY e CATCH
+TRY
+Bloco que tenta executar algo.
+CATCH
+Captura o erro.
+
+✅ Estrutura básica
+try {
+
+   int x = 10 / 0;
+
+}
+catch(Exception e){
+
+   System.out.println("Erro!");
+}
+
+🔥 EXCEÇÃO PERSONALIZADA
+Criar erro próprio.
+
+✅ Estrutura
+public class SaldoInsuficienteException
+       extends Exception {
+
+   public SaldoInsuficienteException(
+           String mensagem){
+
+       super(mensagem);
+   }
+}
+public void sacar(double valor)
+       throws SaldoInsuficienteException {
+
+   if(valor > saldo){
+
+       throw new SaldoInsuficienteException(
+           "Saldo insuficiente!"
+       );
+   }
+
+   saldo -= valor;
+}
+
+
+
+🔥 TRY/CATCH COM EXCEÇÃO PERSONALIZADA
+try {
+
+   conta.sacar(1000);
+
+}
+catch(SaldoInsuficienteException e){
+
+   System.out.println(e.getMessage());
+}
+
+
+try {
+
+   System.out.print("Digite valor: ");
+
+   double valor = sc.nextDouble();
+
+   conta.sacar(valor);
+
+}
+catch(InputMismatchException e){
+
+   System.out.println(
+       "Digite apenas números!"
+   );
+}
+catch(SaldoInsuficienteException e){
+
+   System.out.println(
+       e.getMessage()
+   );
+}
+catch(Exception e){
+
+   System.out.println(
+       "Erro geral!"
+   );
+}
+finally{
+
+   System.out.println(
+       "Operação finalizada!"
+   );
+}
+🧠 THROW vs THROWS
+Essa é UMA DAS COISAS que mais cai em prova.
+
+🔥 THROW
+👉 LANÇA a exceção
+Usado DENTRO do método.
+
+✅ Exemplo
+throw new Exception("Erro!");
+
+🧠 Tradução mental
+"DEU ERRO!"
+
+✅ Exemplo real
+if(valor > saldo){
+
+   throw new SaldoInsuficienteException(
+       "Saldo insuficiente!"
+   );
+}
+👉 Aqui você está:
+criando erro
+lançando erro
+
+🔥 THROWS
+👉 AVISA que o método pode lançar erro
+Fica na assinatura do método.
+
+✅ Exemplo
+public void sacar(double valor)
+       throws SaldoInsuficienteException {
+
+🧠 Tradução mental
+"Esse método PODE dar erro"
+
+🚨 RESUMÃO
+Palavra
+Função
+throw
+lança erro
+throws
+avisa possibilidade
+
+
+🔥 OS DOIS JUNTOS
+public void sacar(double valor)
+       throws SaldoInsuficienteException {
+
+   if(valor > saldo){
+
+       throw new SaldoInsuficienteException(
+           "Saldo insuficiente!"
+       );
+   }
+
+   saldo -= valor;
+
+
+
+}
+
+
+public class PlacaInvalidaException extends Exception {
+
+public PlacaInvalidaException() {
+super("Placa inválida! A placa não pode ser vazia.");
+}
+
+public PlacaInvalidaException(String mensagem) {
+super(mensagem);
+}
+} 
