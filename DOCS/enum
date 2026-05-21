@@ -1,0 +1,97 @@
+SEGUNDA, TERCA, QUARTA, QUINTA, SEXTA
+👉 Em vez de usar String, você usa um tipo seguro.
+enum Dia {
+SEGUNDA, TERCA, QUARTA, QUINTA, SEXTA
+} 
+
+public class Main {
+public static void main(String[] args) {
+
+Dia hoje = Dia.SEGUNDA;
+
+System.out.println(hoje);
+}
+} 
+—--------------------------------------------------------------------------------------------------------------------------------------------
+import java.util.ArrayList;
+
+enum Dia {
+    SEGUNDA, TERCA, QUARTA, QUINTA, SEXTA
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        // =========================
+        // 🔹 ArrayList com enum
+        // =========================
+        ArrayList<Dia> lista = new ArrayList<>();
+
+        lista.add(Dia.SEGUNDA);
+        lista.add(Dia.QUARTA);
+        lista.add(Dia.SEXTA);
+
+        // =========================
+        // 🔹 Exibir com for normal
+        // =========================
+        System.out.println("Lista:");
+        for(int i = 0; i < lista.size(); i++){
+            System.out.println(lista.get(i));
+        }
+
+        // =========================
+        // 🔹 name() → nome do enum
+        // =========================
+        System.out.println("\nName():");
+        System.out.println(lista.get(0).name());
+
+        // =========================
+        // 🔹 ordinal() → posição
+        // =========================
+        System.out.println("\nOrdinal():");
+        System.out.println(lista.get(0).ordinal());
+
+        // =========================
+        // 🔹 valueOf() → String → enum
+        // =========================
+        Dia d = Dia.valueOf("TERCA");
+        System.out.println("\nValueOf:");
+        System.out.println(d);
+
+        // =========================
+        // 🔹 comparação (==)
+        // =========================
+        System.out.println("\nComparação:");
+        if(d == Dia.TERCA){
+            System.out.println("É terça!");
+        }
+
+        // =========================
+        // 🔹 values() → todos os valores
+        // =========================
+        System.out.println("\nTodos os dias:");
+
+        Dia[] todos = Dia.values();
+
+        for(int i = 0; i < todos.length; i++){
+            System.out.println(todos[i]);
+        }
+
+        // =========================
+        // 🔹 switch com enum
+        // =========================
+        System.out.println("\nSwitch:");
+
+        switch(d){
+            case SEGUNDA:
+                System.out.println("Início da semana");
+                break;
+            case SEXTA:
+                System.out.println("Fim da semana");
+                break;
+            default:
+                System.out.println("Dia comum");
+        }
+    }
+}
+
