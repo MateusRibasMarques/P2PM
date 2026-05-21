@@ -1,0 +1,52 @@
+ARRAY LIST
+
+
+import java.util.ArrayList;  
+ArrayList<Pessoa> lista = new ArrayList<>(); 
+add()
+Adiciona elemento na lista
+lista.add(objeto); 
+
+get() 
+Pega elemento pela posição 
+lista.get(0);
+get(int i);
+
+size() 
+Retorna o tamanho da lista 
+lista.size(); 
+
+remove() 
+Remove elemento 
+lista.remove(0); // por índice
+lista.remove(objeto); // por objeto 
+
+contains() 
+Limpa toda a lista 
+lista.contains(objeto); 
+
+clear() 
+Limpa toda a lista 
+lista.clear(); 
+
+((Diretor) f).aprovar(); import java.util.ArrayList;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        ArrayList<String> nomes = new ArrayList<>();
+
+        nomes.add("Ana");
+        nomes.add("Pedro");
+        nomes.add("Lucas");
+
+        for(String nome : nomes) {
+
+            System.out.println(nome);
+        }
+    }
+}
+
+
+
