@@ -1,0 +1,81 @@
+import java.util.Iterator;
+import java.util.ArrayList; 
+
+ArrayList<String> lista = new ArrayList<>(); 
+Iterator<String> it = lista.iterator();
+
+while(it.hasNext()){
+   String nome = it.next();
+   System.out.println(nome);
+}
+
+Parte
+Função
+hasNext()
+tem próximo?
+next()
+pega o próximo
+while
+percorre tudo
+
+
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.ListIterator;
+
+public class Main {
+    public static void main(String[] args) {
+
+        // ArrayList
+        ArrayList<String> nomes = new ArrayList<>();
+
+        nomes.add("Pedro");
+        nomes.add("Lucas");
+        nomes.add("Hugo");
+
+      
+        // Iterator
+        
+
+        Iterator<String> it = nomes.iterator();
+
+        System.out.println("Iterator:");
+
+        while(it.hasNext()) {
+
+            String name = it.next();
+
+            // Removendo
+            if(name.equals("Pedro")) {
+                it.remove();
+            } else {
+                System.out.println(name);
+            }
+        }
+
+       
+        // ListIterator
+      
+
+        ListIterator<String> listIt = nomes.listIterator();
+
+        System.out.println("\nListIterator Frente:");
+
+        while(listIt.hasNext()) {
+            System.out.println(listIt.next());
+        }
+
+        System.out.println("\nListIterator Tras:");
+
+        while(listIt.hasPrevious()) {
+            System.out.println(listIt.previous());
+        }
+    }
+}
+ListIterator<Tipo> it = lista.listIterator();
+
+while(it.hasNext()) {
+   System.out.println(it.next());
+}
+
