@@ -1,0 +1,25 @@
+class Pessoa {
+String nome;
+int idade;
+
+// construtor da classe pai
+Pessoa(String nome, int idade) {
+this.nome = nome;
+this.idade = idade;
+}
+} 
+
+
+class Aluno extends Pessoa {
+String matricula;
+String curso;
+double nota;
+
+// construtor da classe filha
+Aluno(String nome, int idade, String matricula, String curso, double nota) {
+super(nome, idade); // chama o construtor da classe pai
+this.matricula = matricula;
+this.curso = curso;
+this.nota = nota;
+}
+} 
