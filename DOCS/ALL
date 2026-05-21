@@ -1,0 +1,52 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Iterator; 
+Scanner sc = new Scanner(System.in); 
+int x = sc.nextInt(); 
+ArrayList<String> lista = new ArrayList<>();
+
+Iterator<String> it = lista.iterator();
+
+while (it.hasNext()) {
+String nome = it.next();
+System.out.println(nome);
+}
+
+CLASSE	
+class Pessoa {
+String nome;
+int idade;
+   } 
+
+public class Main {
+public static void main(String[] args) {
+
+     }
+   } 
+
+
+OBJETO
+Pessoa p1 = new Pessoa();
+p1.nome = "Mateus";
+p1.idade = 20; 
+
+MÉTODOS DE ACESSO
+public void setNome(String nome){
+this.nome = nome;
+     }
+
+public String getNome(){
+return nome;
+     }
+
+CONSTRUTOR
+class Pessoa {
+String nome;
+
+public Pessoa(String nome){
+this.nome = nome;
+     }
+    } 
+Pessoa p1 = new Pessoa("Mateus");
+
+
