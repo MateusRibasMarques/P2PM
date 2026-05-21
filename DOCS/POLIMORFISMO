@@ -1,0 +1,214 @@
+👉 Parâmetro mudou → sobrecarga
+ 👉 Mesma assinatura → sobrescrita
+ 👉 Casting sem instanceof → perigo
+a.latir();
+SE latir() só existir em Cachorro
+Porque compilação olha para Animal.
+
+Polimorfismo = um mesmo método se comporta de formas diferentes dependendo do objeto
+ Chama o mesmo método, mas cada objeto executa de um jeito.
+  Acontece em tempo de execução
+
+class Animal {
+    void fazerSom() {
+        System.out.println("Som genérico"); }}
+class Cachorro extends Animal {
+    void fazerSom() {
+        System.out.println("Au au");}  }
+class Gato extends Animal {
+    void fazerSom() {
+        System.out.println("Miau"); } }
+Animal a1 = new Cachorro();
+Animal a2 = new Gato();
+
+a1.fazerSom(); // Au au
+a2.fazerSom(); // Miau 
+
+CLASSE ABSTRATA
+
+Uma classe abstrata é uma classe que serve como base para outras classes, mas que não pode ser instanciada diretamente. 
+
+não tem implementação, obrigando a classe filha a fazer. 
+
+
+
+
+abstract class Animal {
+abstract void fazerSom();
+} 
+
+
+
+class Cachorro extends Animal {
+void fazerSom() {
+System.out.println("Au au");
+} 
+   } 
+
+Animal a = new Animal(); // ERRO 
+
+Criar objetos
+Definir dados (nome)
+Adicionar na lista
+Percorrer lista
+
+
+Classe Abstrata
+Interface
+Pode ter código
+Não tem código (em geral)
+Pode ter atributos
+Não tem atributos “normais”
+Herança (extends)
+Contrato (implements)
+Relação “é um”
+Relação “faz algo”
+
+
+INTERFACE
+
+ Interface é um contrato
+Ela define métodos que uma classe é obrigada a implementar
+ Ela NÃO diz como fazer
+  Só diz o que deve existir
+interface NomeInterface {
+tipo metodo();
+} 
+
+⚠️ Regras importantes
+✔ usa implements
+ ✔ é OBRIGADO a implementar todos os métodos
+ ✔ métodos devem ser public
+ ✔ não pode instanciar interface
+
+
+
+
+
+interface Animal {
+void som();
+}
+
+class Cachorro implements Animal {
+
+public void som() {
+System.out.println("Au au");
+}
+}
+
+public class Main {
+public static void main(String[] args) {
+
+Animal a = new Cachorro();
+a.som();
+}
+} 
+
+Use ABSTRACT quando:
+“essas classes são do mesmo tipo e compartilham comportamento”
+Use INTERFACE quando:
+“essas classes não têm relação direta, mas precisam fazer a mesma coisa”
+UPCASTING 
+Conversão de uma referência específica para uma mais genérica 
+
+class Animal {
+void fazerSom() {
+System.out.println("Som de animal");
+}
+}
+
+class Cachorro extends Animal {
+void latir() {
+System.out.println("Au au");
+}
+}
+
+public class Main {
+public static void main(String[] args) {
+
+Animal a = new Cachorro(); // upcasting
+
+Cachorro c = (Cachorro) a; // downcasting
+c.latir(); // funciona
+}
+} 
+DOWNCASTING
+Conversão de uma referência mais genérica para uma mais específica
+Animal a = new Cachorro();
+Cachorro c = (Cachorro) a;
+Você está indo de Animal → Cachorro
+Precisa de cast (Cachorro)
+Pode dar erro
+Usado pra acessar coisas específicas
+class Animal {
+void fazerSom() {
+System.out.println("Som de animal");
+}
+}
+
+class Cachorro extends Animal {
+void latir() {
+System.out.println("Au au");
+}
+}
+
+public class Main {
+public static void main(String[] args) {
+
+Animal a = new Cachorro(); // upcasting
+
+Cachorro c = (Cachorro) a; // downcasting
+c.latir(); // funciona
+}
+INSTANCE OF
+É um operador que verifica:
+👉 “esse objeto pertence a essa classe (ou herda dela)?”
+class Animal {}
+class Cachorro extends Animal {
+    void latir() {
+        System.out.println("Au au");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Animal a = new Cachorro();
+
+        if (a instanceof Cachorro) {
+            Cachorro c = (Cachorro) a; // downcasting
+            c.latir();
+        }
+    }
+}
+
+
+
+
+
+
+Sobrecarga
+ Sobrecarga acontece quando temos vários métodos com o mesmo nome, mas parâmetros diferentes.
+tempo de compilação 
+Sobrescrita
+Mesmo método, mesma assinatura, mas implementação diferente
+👉 Acontece entre superclasse e subclasse
+tempo de execução 
+
+
+
+Sobrecarga: Mesmo nome, parâmetros diferentes.
+Sobrescrita: Mesmo método, mesma assinatura, implementação
+diferente.
+
+
+Sobrecarga → compilação
+Sobrescrita → execução
+Polimorfismo → execução
+Downcasting → execução (pode quebrar)
+instanceof → execução
+Compilação vê o código
+ Execução vê o objeto real
+
+
+
